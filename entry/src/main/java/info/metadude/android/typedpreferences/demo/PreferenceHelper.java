@@ -28,9 +28,9 @@ public class PreferenceHelper {
 
     private final StringPreference mUserInputPreference;
 
-    public PreferenceHelper(final Preferences mSharedPreferences) {
+    public PreferenceHelper(final Preferences msharedPreferences) {
         mUserInputPreference = new StringPreference(
-                mSharedPreferences, PREF_KEY_USER_INPUT);
+                msharedPreferences, PREF_KEY_USER_INPUT);
     }
 
     public void storeUserInput(final String userInput) {
