@@ -1,6 +1,22 @@
+/*
+ * Copyright (C) 2020-21 Application Library Engineering Group
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package info.metadude.android.typedpreferences;
 
-import android.content.SharedPreferences;
+import ohos.data.preferences.Preferences;
 
 /**
  * A wrapper class to store and restore a double value in preferences.
@@ -8,21 +24,29 @@ import android.content.SharedPreferences;
 public class DoublePreference {
 
     protected LongPreference mLongPreference;
+
     public static final double DEFAULT_VALUE_VALUE = 0d;
 
     /**
-     * Constructs a {@code double} preference for the given key
-     * having the default value set to zero available.
+     * DoublePref.
+     *
+     * @param preferences pref.
+     * @param key key.
      */
-    public DoublePreference(SharedPreferences preferences, String key) {
+    public DoublePreference(Preferences preferences, String key) {
         this(preferences, key, DEFAULT_VALUE_VALUE);
     }
 
     /**
-     * Constructs a {@code double} preference for the given key
-     * having the default value available.
+     * DoublePref.
+     *
+     * @param preferences pref.
+     *
+     * @param key key.
+     *
+     * @param defaultValue defaultval.
      */
-    public DoublePreference(SharedPreferences preferences, String key, double defaultValue) {
+    public DoublePreference(Preferences preferences, String key, double defaultValue) {
         mLongPreference = new LongPreference(preferences, key, Double.doubleToLongBits(defaultValue));
     }
 
@@ -43,7 +67,9 @@ public class DoublePreference {
     }
 
     /**
-     * Stores the given {@code double} value asynchronously.
+     * value.
+     *
+     * @param value val.
      */
     public void set(double value) {
         mLongPreference.set(Double.doubleToLongBits(value));
@@ -55,5 +81,4 @@ public class DoublePreference {
     public void delete() {
         mLongPreference.delete();
     }
-
 }
