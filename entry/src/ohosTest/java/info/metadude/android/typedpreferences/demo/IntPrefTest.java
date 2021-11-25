@@ -25,64 +25,48 @@ import ohos.data.preferences.Preferences;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 public class IntPrefTest {
-
     private static final String PREFERENCES_KEY = BuildConfig.APPLICATION_ID+".TEST_KEY_STRING";
     private static final String APP_RATER = "apprater";
-
-
-    private IntPreference mpreference4;
     private static final int MTESTVALUE4 = 42;
     private static final int MDEFAULTVALUE4 = 23;
     private static final int MDELTA4= 0;
+    private IntPreference mpreference4;
 
     @Before
     public void setUp()  {
-        Preferences preferences;
-        DatabaseHelper databaseHelper;
-        Context context;
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
-        databaseHelper=new DatabaseHelper(context);
-        preferences=databaseHelper.getPreferences(APP_RATER);
+        Context context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        Preferences preferences=databaseHelper.getPreferences(APP_RATER);
         mpreference4 = new IntPreference(preferences, PREFERENCES_KEY, MDEFAULTVALUE4);
     }
-
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
         assertEquals("info.metadude.android.typedpreferences.demo", actualBundleName);
     }
-
     @Test
     public void testPreferenceToBeInitialized2(){
         Assert.assertNotNull(mpreference4);
     }
-
-
-
     @Test
     public void testPreferenceToBeSet2(){
         mpreference4.set(MTESTVALUE4);
         Assert.assertTrue(mpreference4.isSet());
     }
-
-
     @Test
     public void testPreferenceToEqualValue2(){
         mpreference4.set(MTESTVALUE4);
         final int value = mpreference4.get();
         Assert.assertEquals(MTESTVALUE4,value);
     }
-
     @Test
     public void testPreferenceNotToEqualValue2(){
         mpreference4.set(55);
         Assert.assertNotEquals(mpreference4.get(), MTESTVALUE4, MDELTA4);
     }
-
     @Test
     public void testPreferenceToBeUnset2(){
         mpreference4.set(MTESTVALUE4);

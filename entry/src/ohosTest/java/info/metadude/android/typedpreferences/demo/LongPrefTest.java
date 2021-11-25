@@ -25,29 +25,22 @@ import ohos.data.preferences.Preferences;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 public class LongPrefTest {
-
     private static final String PREFERENCES_KEY = BuildConfig.APPLICATION_ID+".TEST_KEY_STRING";
     private static final String APP_RATER = "apprater";
-
-    private LongPreference mpreference5;
     private static final long MTESTVALUE5= 23L;
     private static final long MDEFAULTVALUE5 = 42L;
+    private LongPreference mpreference5;
 
     @Before
     public void setUp()  {
-        Preferences preferences;
-        DatabaseHelper databaseHelper;
-        Context context;
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
-        databaseHelper=new DatabaseHelper(context);
-        preferences=databaseHelper.getPreferences(APP_RATER);
+        Context context=AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        Preferences preferences=databaseHelper.getPreferences(APP_RATER);
         mpreference5= new LongPreference(preferences, PREFERENCES_KEY, MDEFAULTVALUE5);
     }
-
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
@@ -57,13 +50,11 @@ public class LongPrefTest {
     public void testPreferenceToBeInitialized6(){
         Assert.assertNotNull(mpreference5);
     }
-
     @Test
     public void testPreferenceToBeSet6(){
         mpreference5.set(MTESTVALUE5);
         Assert.assertTrue(mpreference5.isSet());
     }
-
     @Test
     public void testPreferenceToEqualValue6(){
         mpreference5.set(MTESTVALUE5);

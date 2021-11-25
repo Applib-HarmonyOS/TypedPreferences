@@ -29,56 +29,44 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class BooleanPrefTest {
-
     private static final String PREFERENCES_KEY = BuildConfig.APPLICATION_ID+".TEST_KEY_STRING";
     private static final String APP_RATER = "apprater";
-
-    private BooleanPreference mpreference1;
     private static final boolean MTESTVALUE1 = true;
     private static final boolean MDEFAULTVALUE1 = false;
+    private BooleanPreference mpreference1;
 
     @Before
     public void setUp()  {
-        Preferences preferences;
-        DatabaseHelper databaseHelper;
-        Context context;
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
-        databaseHelper=new DatabaseHelper(context);
-        preferences=databaseHelper.getPreferences(APP_RATER);
+        Context context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        Preferences preferences=databaseHelper.getPreferences(APP_RATER);
         mpreference1 = new BooleanPreference(preferences, PREFERENCES_KEY,MDEFAULTVALUE1 );
     }
-
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
         assertEquals("info.metadude.android.typedpreferences.demo", actualBundleName);
     }
-
     @Test
-    public void testPreferenceInitialized5(){
+    public void testPreferenceInitialized5()
+    {
         Assert.assertNotNull(mpreference1);
     }
-    
-
     @Test
     public void testPreferenceToBeSet5(){
         mpreference1.set(false);
         Assert.assertTrue(mpreference1.isSet());
     }
-
-
     @Test
     public void testPreferenceToEqualValue5(){
         mpreference1.set(MTESTVALUE1);
         Assert.assertTrue(mpreference1.get());
     }
-
     @Test
     public void testPreferenceNotToEqualValue5(){
         mpreference1.set(false);
         Assert.assertFalse(mpreference1.get());
     }
-
     @Test
     public void testPreferenceToBeUnset5(){
         mpreference1.set(MTESTVALUE1);

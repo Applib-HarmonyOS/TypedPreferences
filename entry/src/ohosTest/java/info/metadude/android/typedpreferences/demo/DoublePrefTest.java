@@ -29,59 +29,45 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class DoublePrefTest {
-
     private static final String PREFERENCES_KEY = BuildConfig.APPLICATION_ID+".TEST_KEY_STRING";
     private static final String APP_RATER = "apprater";
-
-
-    private DoublePreference mpreference2;
     private static final double MTESTVALUE2 = 23.23d;
     private static final double MDEFAULTVALUE2 = 42.42f;
     private static final float MDELTA2 = 0f;
+    private DoublePreference mpreference2;
 
     @Before
     public void setUp()  {
-        Preferences preferences;
-        DatabaseHelper databaseHelper;
-        Context context;
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
-        databaseHelper=new DatabaseHelper(context);
-        preferences=databaseHelper.getPreferences(APP_RATER);
+        Context context=AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        Preferences preferences=databaseHelper.getPreferences(APP_RATER);
         mpreference2 = new DoublePreference(preferences, PREFERENCES_KEY,MDEFAULTVALUE2 );
     }
-
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
         assertEquals("info.metadude.android.typedpreferences.demo", actualBundleName);
     }
-
     @Test
     public void testPreferenceToBeInitialized4(){
         Assert.assertNotNull(mpreference2);
     }
-
-
     @Test
     public void testPreferenceToBeSet4(){
         mpreference2.set(MTESTVALUE2);
         Assert.assertTrue(mpreference2.isSet());
     }
-
-
     @Test
     public void testPreferenceToEqualValue4(){
         mpreference2.set(MTESTVALUE2);
         final double value = mpreference2.get();
         Assert.assertEquals(value, MTESTVALUE2, MDELTA2);
     }
-
     @Test
     public void testPreferenceNotToEqualValue4(){
         mpreference2.set(66.66d);
         Assert.assertNotEquals(MTESTVALUE2,mpreference2.get());
     }
-
     @Test
     public void testPreferenceToBeUnset4(){
         mpreference2.set(MTESTVALUE2);

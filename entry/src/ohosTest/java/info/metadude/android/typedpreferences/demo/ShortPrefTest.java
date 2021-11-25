@@ -25,39 +25,28 @@ import ohos.data.preferences.Preferences;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 public class ShortPrefTest {
-
-
     private static final String PREFERENCES_KEY = BuildConfig.APPLICATION_ID+".TEST_KEY_STRING";
     private static final String APP_RATER = "apprater";
-
-
-    private ShortPreference mpreference6;
     private static final short MTESTVALUE6 = (short) 42;
     private static final short MDEFAULTVALUE6 = (short) 13;
     private static final short MDELTA6 = (short) 0;
-
+    private ShortPreference mpreference6;
 
     @Before
     public void setUp()  {
-        Preferences preferences;
-        DatabaseHelper databaseHelper;
-        Context context;
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
-        databaseHelper=new DatabaseHelper(context);
-        preferences=databaseHelper.getPreferences(APP_RATER);
+        Context context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        Preferences preferences=databaseHelper.getPreferences(APP_RATER);
         mpreference6= new ShortPreference(preferences, PREFERENCES_KEY, MDEFAULTVALUE6);
     }
-
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
         assertEquals("info.metadude.android.typedpreferences.demo", actualBundleName);
     }
-
     @Test
     public void testPreferenceToBeInitialized1()
     {
@@ -69,21 +58,17 @@ public class ShortPrefTest {
         mpreference6.set(MTESTVALUE6);
         Assert.assertTrue(mpreference6.isSet());
     }
-
-
     @Test
     public void testPreferenceToEqualValue1(){
         mpreference6.set(MTESTVALUE6);
         final short value = mpreference6.get();
         Assert.assertEquals(MTESTVALUE6,value);
     }
-
     @Test
     public void testPreferenceNotToEqualValue1(){
         mpreference6.set((short) 55);
         Assert.assertNotEquals(mpreference6.get(), MTESTVALUE6, MDELTA6);
     }
-
     @Test
     public void testPreferenceToBeUnset1(){
         mpreference6.set(MTESTVALUE6);

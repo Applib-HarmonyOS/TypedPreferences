@@ -18,7 +18,7 @@
     ],
     "distro": {
       "deliveryWithInstall": true,
-      "moduleName": "library",
+      "moduleName": "typedpreferences",
       "moduleType": "har"
     }
   }

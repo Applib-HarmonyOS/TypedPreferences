@@ -12,32 +12,21 @@ class for each native type:
 * [`ShortPreference`][short-pref] for a `short` value
 * [`StringPreference`][string-pref] for a `String` value
 
-Each class comes with two constructors - one of them allows to ommit
-the default value.
-
-All classes declare the same methods: `get()`, `isSet()`, `set()` and `delete()`.
-Here are the method signatures as definied in the `StringPreference` class.
-
-```java
-public class StringPreference {
-    public String get() {  }
-    public boolean isSet() {  }
-    public void set(String value) {  }
-    public void delete() {  }
-}
-```
-
 ## Source
 
-Inspired by https://github.com/johnjohndoe/TypedPreferences - version 1.0
+Inspired by https://github.com/johnjohndoe/TypedPreferences - v2.1.0 version
 
+## Feature
+
+<img src="Screenshot/ezgif.com-gif-maker.gif" width="500">
 
 ## Dependency
 1. For using apprater module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
 ```groovy
     dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
-    implementation project(path: ':library')
+    implementation project(path: ':typedpreferences'
+)
     testImplementation 'junit:junit:4.13'
     ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
 }
@@ -51,23 +40,19 @@ Inspired by https://github.com/johnjohndoe/TypedPreferences - version 1.0
 ```
 ## Usage
 
-#### Include following code in your layout:
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<DirectionalLayout
-    xmlns:ohos="http://schemas.huawei.com/res/ohos"
-    ohos:height="match_parent"
-    ohos:width="match_parent"
-    ohos:alignment="center"
-    ohos:orientation="vertical">
-</DirectionalLayout>
-```
-
 #### In code
-```
-super.onStart(intent);
-        super.setUIContent(ResourceTable.Layout_ability_main);
+Each class comes with two constructors - one of them allows to ommit
+the default value.
 
+All classes declare the same methods: `get()`, `isSet()`, `set()` and `delete()`.
+Here are the method signatures as definied in the `StringPreference` class.
+```java
+public class StringPreference {
+    public String get() {  }
+    public boolean isSet() {  }
+    public void set(String value) {  }
+    public void delete() {  }
+}
 ```
 
 ## License

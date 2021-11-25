@@ -32,9 +32,9 @@ import info.metadude.android.typedpreferences.demo.ResourceTable;
  */
 public class MainAbilitySlice extends AbilitySlice {
     private PreferenceHelper mPreferenceHelper;
-    Text text;
-    TextField textField;
-    Button button;
+    private Text text;
+    private TextField textField;
+    private Button button;
 
     @Override
     public void onStart(Intent intent) {
@@ -50,7 +50,6 @@ public class MainAbilitySlice extends AbilitySlice {
                 text.setText(textField.getText());
             }
         });
-
     }
 
     @Override
@@ -70,10 +69,10 @@ public class MainAbilitySlice extends AbilitySlice {
         super.onForeground(intent);
     }
 
-    /** PreferenceHelper.
+    /**
+     * PreferenceHelper.
      *
      * @return mpreferenceHelper.
-     *
      */
     public PreferenceHelper getPreferenceHelper() {
         if (mPreferenceHelper == null) {
