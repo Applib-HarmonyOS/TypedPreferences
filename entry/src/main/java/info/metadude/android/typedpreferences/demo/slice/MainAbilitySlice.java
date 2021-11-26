@@ -34,7 +34,6 @@ public class MainAbilitySlice extends AbilitySlice {
     private PreferenceHelper mPreferenceHelper;
     private Text text;
     private TextField textField;
-    private Button button;
 
     @Override
     public void onStart(Intent intent) {
@@ -42,7 +41,7 @@ public class MainAbilitySlice extends AbilitySlice {
         super.setUIContent(ResourceTable.Layout_ability_main);
         textField = (TextField) findComponentById(ResourceTable.Id_editText);
         text = (Text) findComponentById(ResourceTable.Id_textView);
-        button = (Button) findComponentById(ResourceTable.Id_button);
+        Button button = (Button) findComponentById(ResourceTable.Id_button);
         mPreferenceHelper = getPreferenceHelper();
         button.setClickedListener(new Component.ClickedListener() {
             @Override
