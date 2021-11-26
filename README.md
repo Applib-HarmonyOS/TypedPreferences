@@ -33,10 +33,10 @@ Inspired by https://github.com/johnjohndoe/TypedPreferences - v2.1.0 version
 ```
 2. For using apprater in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
 ```groovy
-	dependencies {
-		implementation fileTree(dir: 'libs', include: ['*.har'])
-		testImplementation 'junit:junit:4.13'
-	}
+    dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.har'])
+    testImplementation 'junit:junit:4.13'
+}
 ```
 ## Usage
 
