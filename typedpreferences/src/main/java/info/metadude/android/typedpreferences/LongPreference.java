@@ -12,7 +12,8 @@ public class LongPreference extends BasePreference {
     public static final long DEFAULT_VALUE_VALUE = 0L;
 
     /**
-     * LongPreference.
+     * Constructs a {@code long} preference for the given key
+     * having the default value set to {@code 0} available.
      *
      * @param preferences pref.
      * @param key key.
@@ -22,7 +23,8 @@ public class LongPreference extends BasePreference {
     }
 
     /**
-     * Long.
+     * Constructs a {@code long} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -42,7 +44,7 @@ public class LongPreference extends BasePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code long} value asynchronously.
      *
      * @param value val.
      */

@@ -12,7 +12,7 @@ public class ShortPreference {
     public static final short DEFAULT_VALUE_VALUE = (short) IntPreference.DEFAULT_VALUE_VALUE;
 
     /**
-     * ShortPreference.
+     * Constructs a {@code short} preference for the given key.
      *
      * @param preferences pref.
      * @param key key.
@@ -22,7 +22,8 @@ public class ShortPreference {
     }
 
     /**
-     * Short.
+     * Constructs a {@code short} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -49,7 +50,7 @@ public class ShortPreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code short} value asynchronously.
      *
      * @param value val.
      */

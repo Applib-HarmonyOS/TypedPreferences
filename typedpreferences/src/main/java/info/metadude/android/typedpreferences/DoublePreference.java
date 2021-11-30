@@ -10,7 +10,8 @@ public class DoublePreference {
     public static final double DEFAULT_VALUE_VALUE = 0d;
 
     /**
-     * DoublePref.
+     * Constructs a {@code double} preference for the given key
+     * having the default value set to zero available.
      *
      * @param preferences pref.
      * @param key key.
@@ -20,7 +21,8 @@ public class DoublePreference {
     }
 
     /**
-     * DoublePref.
+     * Constructs a {@code double} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -47,7 +49,7 @@ public class DoublePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code double} value asynchronously.
      *
      * @param value val.
      */

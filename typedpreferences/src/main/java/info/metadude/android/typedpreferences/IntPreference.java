@@ -12,7 +12,8 @@ public class IntPreference extends BasePreference {
     public static final int DEFAULT_VALUE_VALUE = 0;
 
     /**
-     * IntPreference.
+     * Constructs a {@code int} preference for the given key
+     * having the default value set to zero available.
      *
      * @param preferences pref.
      * @param key key.
@@ -22,13 +23,13 @@ public class IntPreference extends BasePreference {
     }
 
     /**
-     * Int.
+     * Constructs a {@code int} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
      * @param defaultValue defaultval.
      */
-
     public IntPreference(final Preferences preferences, final String key, int defaultValue) {
         super(preferences, key);
         mDefaultValue = defaultValue;
@@ -43,7 +44,7 @@ public class IntPreference extends BasePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code int} value asynchronously.
      *
      * @param value val.
      */

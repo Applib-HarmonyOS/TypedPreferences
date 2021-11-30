@@ -11,7 +11,8 @@ public class FloatPreference extends BasePreference {
     public static final float DEFAULT_VALUE_VALUE = 0f;
 
     /**
-     * FloatPreference.
+     * Constructs a {@code float} preference for the given key
+     * having the default value set to {@code 0} available.
      *
      * @param preferences pref.
      * @param key key.
@@ -21,7 +22,8 @@ public class FloatPreference extends BasePreference {
     }
 
     /**
-     * Float.
+     * Constructs a {@code float} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -41,7 +43,7 @@ public class FloatPreference extends BasePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code float} value asynchronously.
      *
      * @param value val.
      */

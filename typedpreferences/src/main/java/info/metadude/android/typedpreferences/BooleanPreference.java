@@ -10,7 +10,8 @@ public class BooleanPreference extends BasePreference {
     public static final boolean DEFAULT_VALUE_VALUE = false;
 
     /**
-     * BooleanPreference.
+     * Constructs a {@code boolean} preference for the given key
+     * having the default value set to {@code false} available.
      *
      * @param preferences pref.
      * @param key key.
@@ -20,7 +21,8 @@ public class BooleanPreference extends BasePreference {
     }
 
     /**
-     * Boolean.
+     * Constructs a {@code boolean} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -40,7 +42,7 @@ public class BooleanPreference extends BasePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code boolean} value asynchronously.
      *
      * @param value val.
      */

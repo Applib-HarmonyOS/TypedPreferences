@@ -12,7 +12,8 @@ public class StringPreference extends BasePreference {
     public static final String DEFAULT_VALUE_VALUE = "";
 
     /**
-     * StringPreference.
+     * Constructs a {@code String} preference for the given key
+     * having the default value set to an empty string available.
      *
      * @param preferences pref.
      * @param key key.
@@ -22,7 +23,8 @@ public class StringPreference extends BasePreference {
     }
 
     /**
-     * String.
+     * Constructs a {@code String} preference for the given key
+     * having the default value available.
      *
      * @param preferences pref.
      * @param key key.
@@ -42,13 +44,11 @@ public class StringPreference extends BasePreference {
     }
 
     /**
-     * value.
+     * Stores the given {@code String} value asynchronously.
      *
      * @param value val.
      */
     public void set(final String value) {
         mPreferences.putString(mKey, value).flush();
     }
-
-
 }
