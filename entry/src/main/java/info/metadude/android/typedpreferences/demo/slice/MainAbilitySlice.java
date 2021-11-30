@@ -50,6 +50,7 @@ public class MainAbilitySlice extends AbilitySlice {
             }
         });
     }
+
     @Override
     public void onActive() {
         super.onActive();
