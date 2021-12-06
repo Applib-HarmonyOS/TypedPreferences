@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <TextField
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:id="$+id:editText"
+        ohos:hint="Enter input"
+        ohos:text_size="40vp"
+        ohos:background_element="#FFF1F0F0"
+        ohos:text_color="#FFB3ADAD"
+        ohos:left_margin="10fp"
+        ohos:right_padding="160fp"
+        ohos:left_padding="70fp"
+        ohos:top_padding="20fp"
+        ohos:bottom_margin="30vp"/>
+
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:id="$+id:button"
+        ohos:top_margin="20fp"
+        ohos:left_margin="15fp"
+        ohos:left_padding="40fp"
+        ohos:right_padding="90fp"
+        ohos:top_padding="5fp"
+        ohos:text_size="30fp"
+        ohos:bottom_margin="10vp"
+        ohos:text="Submit"
+        ohos:background_element="#FFAB9E9E"
+        ohos:text_color="#ffffff"/>
+    <Text
+        ohos:id="$+id:textView"
+        ohos:width="match_content"
+        ohos:height="match_content"
+        ohos:top_margin="25fp"
+        ohos:left_margin="10fp"
+        ohos:left_padding="60fp"
+        ohos:bottom_margin="30vp"
+        ohos:right_padding="155fp"
+        ohos:top_padding="20fp"
+        ohos:hint="Display input"
+        ohos:text_color="#FFB3ADAD"
+        ohos:text_size="40vp"
+        ohos:background_element="#FFF1F0F0"
+        />
+
+</DirectionalLayout>
