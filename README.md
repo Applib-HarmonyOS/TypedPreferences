@@ -37,6 +37,13 @@ Inspired by https://github.com/johnjohndoe/TypedPreferences - v2.1.0 version
     testImplementation 'junit:junit:4.13'
 }
 ```
+3. For using TypedPreferences from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+``` groovy
+    dependencies {
+    implementation ('dev.applibgroup:typedpreferences:1.0.0')
+    testCompile 'junit:junit:4.13'
+}
+```
 ## Usage
 
 #### In code
